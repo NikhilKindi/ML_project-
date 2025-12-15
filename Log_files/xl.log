@@ -1,0 +1,106 @@
+Overriding config with config/abc_xl.py:
+# config/abc_xl.py
+# XL GPT (~100M parameters) — FINAL, CLEAN, FAIR
+
+# -------------------
+# Output & logging
+# -------------------
+out_dir = '/content/drive/MyDrive/nanoGPT_runs/out-abc-xl'
+eval_interval = 1000
+eval_iters = 200
+log_interval = 200
+always_save_checkpoint = True
+
+# -------------------
+# Dataset
+# -------------------
+dataset = 'abc'
+
+# -------------------
+# Batch Settings (CONSISTENT)
+# -------------------
+batch_size = 8
+block_size = 256
+gradient_accumulation_steps = 32
+# Tokens / iter = 8 × 256 × 32 = 32768 (same as all models)
+
+# -------------------
+# Model Architecture (XL)
+# -------------------
+n_layer = 36
+n_head  = 20
+n_embd  = 640
+dropout = 0.1
+
+# -------------------
+# Training (1 epoch ≈ 200M tokens)
+# -------------------
+learning_rate = 3e-4
+max_iters = 6104
+lr_decay_iters = max_iters
+warmup_iters = 500
+min_lr = 1e-5
+
+weight_decay = 1e-1
+beta1 = 0.9
+beta2 = 0.95
+grad_clip = 1.0
+
+# -------------------
+# System
+# -------------------
+device = 'cuda'
+dtype = 'bfloat16'   # A100-safe
+compile = False      # safer for Colab
+
+tokens per iteration will be: 65,536
+found vocab_size = 99 (inside data/abc/meta.pkl)
+Initializing a new model from scratch
+number of parameters: 177.06M
+num decayed parameter tensors: 146, with 177,174,400 parameters
+num non-decayed parameter tensors: 73, with 46,720 parameters
+using fused AdamW: True
+step 0: train loss 4.7195, val loss 4.7221
+iter 0: loss 4.6645, time 11270.94ms, mfu -100.00%
+iter 200: loss 1.5370, time 2018.55ms, mfu 11.79%
+iter 400: loss 0.8757, time 2032.37ms, mfu 11.78%
+iter 600: loss 0.5336, time 1980.90ms, mfu 11.81%
+iter 800: loss 0.5643, time 1993.69ms, mfu 11.82%
+step 1000: train loss 0.5072, val loss 0.4773
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 1000: loss 0.4700, time 15043.11ms, mfu 10.80%
+iter 1200: loss 0.6965, time 1955.62ms, mfu 10.93%
+iter 1400: loss 0.5890, time 2043.99ms, mfu 11.00%
+iter 1600: loss 0.4120, time 1976.95ms, mfu 11.11%
+iter 1800: loss 0.5060, time 2015.17ms, mfu 11.18%
+step 2000: train loss 0.4472, val loss 0.4410
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 2000: loss 0.5061, time 18228.42ms, mfu 10.19%
+iter 2200: loss 0.4399, time 2050.54ms, mfu 10.33%
+iter 2400: loss 0.2908, time 1984.78ms, mfu 10.50%
+iter 2600: loss 0.4739, time 1979.17ms, mfu 10.65%
+iter 2800: loss 0.5176, time 2004.91ms, mfu 10.77%
+step 3000: train loss 0.4194, val loss 0.4053
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 3000: loss 0.4119, time 16089.92ms, mfu 9.84%
+iter 3200: loss 0.5110, time 1996.39ms, mfu 10.05%
+iter 3400: loss 0.4627, time 2004.97ms, mfu 10.23%
+iter 3600: loss 0.4916, time 1958.58ms, mfu 10.43%
+iter 3800: loss 0.3743, time 2005.80ms, mfu 10.57%
+step 4000: train loss 0.3998, val loss 0.4005
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 4000: loss 0.5103, time 15351.06ms, mfu 9.67%
+iter 4200: loss 0.5525, time 2005.01ms, mfu 9.89%
+iter 4400: loss 0.4393, time 1989.06ms, mfu 10.10%
+iter 4600: loss 0.4510, time 2004.53ms, mfu 10.27%
+iter 4800: loss 0.4389, time 2004.06ms, mfu 10.43%
+step 5000: train loss 0.4007, val loss 0.3893
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 5000: loss 0.3728, time 19262.40ms, mfu 9.51%
+iter 5200: loss 0.4148, time 1970.02ms, mfu 9.77%
+iter 5400: loss 0.3584, time 2004.66ms, mfu 9.98%
+iter 5600: loss 0.4214, time 1980.41ms, mfu 10.18%
+iter 5800: loss 0.3697, time 1980.52ms, mfu 10.37%
+step 6000: train loss 0.3971, val loss 0.3869
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-xl
+iter 6000: loss 0.4468, time 15330.35ms, mfu 9.49%

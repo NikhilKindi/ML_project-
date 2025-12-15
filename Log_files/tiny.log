@@ -1,0 +1,91 @@
+Overriding config with config/abc_tiny.py:
+# config/abc_tiny.py
+# Tiny GPT (~1M params) — 200M token run
+
+out_dir = '/content/drive/MyDrive/nanoGPT_runs/out-abc-tiny'
+eval_interval = 1000
+eval_iters = 200
+log_interval = 200
+always_save_checkpoint = True
+
+dataset = 'abc'
+
+# ---- batching ----
+block_size = 256
+batch_size = 8
+gradient_accumulation_steps = 16
+# tokens/iter = 32768
+
+# ---- model (~1M params) ----
+n_layer = 4
+n_head  = 4
+n_embd  = 144
+dropout = 0.1
+
+# ---- training (200M tokens = 1 epoch) ----
+learning_rate = 3e-4
+max_iters = 6104
+lr_decay_iters = 6104
+warmup_iters = 500
+min_lr = 1e-5
+
+weight_decay = 1e-1
+beta1 = 0.9
+beta2 = 0.95
+grad_clip = 1.0
+
+device = 'cuda'
+dtype = 'float16'
+compile = False
+
+tokens per iteration will be: 32,768
+found vocab_size = 99 (inside data/abc/meta.pkl)
+Initializing a new model from scratch
+number of parameters: 1.01M
+num decayed parameter tensors: 18, with 1,046,448 parameters
+num non-decayed parameter tensors: 9, with 1,296 parameters
+using fused AdamW: True
+step 0: train loss 4.5915, val loss 4.5914
+iter 0: loss 4.5714, time 92739.19ms, mfu -100.00%
+iter 200: loss 1.8991, time 1217.83ms, mfu 0.07%
+iter 400: loss 1.7459, time 362.95ms, mfu 0.08%
+iter 600: loss 1.1660, time 379.78ms, mfu 0.10%
+iter 800: loss 1.1209, time 627.09ms, mfu 0.10%
+step 1000: train loss 0.9969, val loss 0.9755
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 1000: loss 1.0685, time 5782.16ms, mfu 0.09%
+iter 1200: loss 0.9172, time 209.33ms, mfu 0.12%
+iter 1400: loss 1.0884, time 213.52ms, mfu 0.15%
+iter 1600: loss 0.8526, time 224.12ms, mfu 0.17%
+iter 1800: loss 0.8307, time 208.48ms, mfu 0.19%
+step 2000: train loss 0.7313, val loss 0.7373
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 2000: loss 1.0254, time 2875.91ms, mfu 0.18%
+iter 2200: loss 0.9394, time 209.71ms, mfu 0.20%
+iter 2400: loss 0.8437, time 200.05ms, mfu 0.22%
+iter 2600: loss 0.8067, time 202.93ms, mfu 0.24%
+iter 2800: loss 0.7337, time 204.38ms, mfu 0.25%
+step 3000: train loss 0.6702, val loss 0.6572
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 3000: loss 0.9019, time 2755.35ms, mfu 0.23%
+iter 3200: loss 0.7357, time 200.82ms, mfu 0.25%
+iter 3400: loss 0.7497, time 413.61ms, mfu 0.24%
+iter 3600: loss 0.7165, time 202.17ms, mfu 0.26%
+iter 3800: loss 0.8392, time 199.87ms, mfu 0.28%
+step 4000: train loss 0.6122, val loss 0.6310
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 4000: loss 0.6538, time 2761.16ms, mfu 0.25%
+iter 4200: loss 0.7608, time 198.59ms, mfu 0.27%
+iter 4400: loss 0.5221, time 202.42ms, mfu 0.28%
+iter 4600: loss 0.5941, time 200.98ms, mfu 0.29%
+iter 4800: loss 0.7308, time 201.32ms, mfu 0.31%
+step 5000: train loss 0.5948, val loss 0.5963
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 5000: loss 0.7047, time 3020.87ms, mfu 0.28%
+iter 5200: loss 0.6209, time 209.00ms, mfu 0.29%
+iter 5400: loss 0.8280, time 216.95ms, mfu 0.30%
+iter 5600: loss 0.6553, time 215.64ms, mfu 0.31%
+iter 5800: loss 0.5473, time 211.65ms, mfu 0.31%
+step 6000: train loss 0.6067, val loss 0.5894
+saving checkpoint to /content/drive/MyDrive/nanoGPT_runs/out-abc-tiny
+iter 6000: loss 0.6429, time 2796.02ms, mfu 0.29%

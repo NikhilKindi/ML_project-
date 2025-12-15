@@ -1,0 +1,75 @@
+lstm_tiny: 1.10M params | iters=6104
+lstm_tiny | iter 500/6104
+lstm_tiny | iter 1000/6104
+lstm_tiny | iter 1500/6104
+lstm_tiny | iter 2000/6104
+lstm_tiny | VAL @ 2000: 0.7188
+lstm_tiny | iter 2500/6104
+lstm_tiny | iter 3000/6104
+lstm_tiny | iter 3500/6104
+lstm_tiny | iter 4000/6104
+lstm_tiny | VAL @ 4000: 0.6507
+lstm_tiny | iter 4500/6104
+lstm_tiny | iter 5000/6104
+lstm_tiny | iter 5500/6104
+lstm_tiny | iter 6000/6104
+lstm_tiny | VAL @ 6000: 0.6413
+lstm_tiny | VAL @ 6104: 0.6497
+lstm_tiny DONE in 0.72h
+
+lstm_small: 4.92M params | iters=6104
+lstm_small | iter 500/6104
+lstm_small | iter 1000/6104
+lstm_small | iter 1500/6104
+lstm_small | iter 2000/6104
+lstm_small | VAL @ 2000: 0.6475
+lstm_small | iter 2500/6104
+lstm_small | iter 3000/6104
+lstm_small | iter 3500/6104
+lstm_small | iter 4000/6104
+lstm_small | VAL @ 4000: 0.5688
+lstm_small | iter 4500/6104
+lstm_small | iter 5000/6104
+lstm_small | iter 5500/6104
+lstm_small | iter 6000/6104
+lstm_small | VAL @ 6000: 0.5453
+lstm_small | VAL @ 6104: 0.5662
+lstm_small DONE in 1.49h
+
+lstm_medium: 19.47M params | iters=6104
+lstm_medium | iter 500/6104
+lstm_medium | iter 1000/6104
+lstm_medium | iter 1500/6104
+lstm_medium | iter 2000/6104
+lstm_medium | VAL @ 2000: 0.5747
+lstm_medium | iter 2500/6104
+lstm_medium | iter 3000/6104
+lstm_medium | iter 3500/6104
+lstm_medium | iter 4000/6104
+lstm_medium | VAL @ 4000: 0.5312
+lstm_medium | iter 4500/6104
+lstm_medium | iter 5000/6104
+lstm_medium | iter 5500/6104
+lstm_medium | iter 6000/6104
+lstm_medium | VAL @ 6000: 0.5139
+lstm_medium | VAL @ 6104: 0.5067
+lstm_medium DONE in 2.83h
+
+lstm_large: 52.73M params | iters=6104
+lstm_large | iter 500/6104
+lstm_large | iter 1000/6104
+lstm_large | iter 1500/6104
+lstm_large | iter 2000/6104
+lstm_large | VAL @ 2000: 0.5493
+lstm_large | iter 2500/6104
+lstm_large | iter 3000/6104
+lstm_large | iter 3500/6104
+lstm_large | iter 4000/6104
+lstm_large | VAL @ 4000: 0.5134
+lstm_large | iter 4500/6104
+lstm_large | iter 5000/6104
+lstm_large | iter 5500/6104
+lstm_large | iter 6000/6104
+lstm_large | VAL @ 6000: 0.4942
+lstm_large | VAL @ 6104: 0.4991
+lstm_large DONE in 5.97h

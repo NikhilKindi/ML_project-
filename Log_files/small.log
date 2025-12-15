@@ -1,0 +1,106 @@
+Overriding config with config/abc_small.py:
+# config/abc_small.py
+# Small GPT (~5–6M parameters)
+
+# -------------------
+# Output & logging
+# -------------------
+out_dir = '/kaggle/working/nanoGPT_runs/out-abc-small'
+eval_interval = 1000
+eval_iters = 200
+log_interval = 200
+always_save_checkpoint = True
+
+# -------------------
+# Dataset
+# -------------------
+dataset = 'abc'
+
+# -------------------
+# Batch / streaming
+# -------------------
+block_size = 256
+batch_size = 8
+gradient_accumulation_steps = 16
+# Effective tokens / iteration = 32768
+
+# -------------------
+# Model (Small)
+# -------------------
+n_layer = 8
+n_head  = 8
+n_embd  = 256
+dropout = 0.1
+
+# -------------------
+# Training (1 epoch = 200M tokens)
+# -------------------
+learning_rate = 3e-4
+max_iters = 6104
+lr_decay_iters = max_iters
+warmup_iters = 500
+min_lr = 1e-5
+
+weight_decay = 1e-1
+beta1 = 0.9
+beta2 = 0.95
+grad_clip = 1.0
+
+# -------------------
+# System
+# -------------------
+device = 'cuda'
+dtype = 'float16'
+compile = False
+
+tokens per iteration will be: 32,768
+found vocab_size = 99 (inside data/abc/meta.pkl)
+Initializing a new model from scratch
+number of parameters: 6.32M
+num decayed parameter tensors: 34, with 6,382,336 parameters
+num non-decayed parameter tensors: 17, with 4,352 parameters
+using fused AdamW: True
+step 0: train loss 4.5635, val loss 4.5643
+iter 0: loss 4.5433, time 4856.32ms, mfu -100.00%
+iter 200: loss 1.3242, time 400.70ms, mfu 1.16%
+iter 400: loss 1.0242, time 401.11ms, mfu 1.16%
+iter 600: loss 0.9407, time 407.41ms, mfu 1.16%
+iter 800: loss 0.8312, time 401.79ms, mfu 1.16%
+step 1000: train loss 0.7211, val loss 0.6871
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 1000: loss 0.6539, time 4828.47ms, mfu 1.05%
+iter 1200: loss 0.5892, time 401.27ms, mfu 1.06%
+iter 1400: loss 0.6311, time 401.96ms, mfu 1.07%
+iter 1600: loss 0.7725, time 401.72ms, mfu 1.08%
+iter 1800: loss 0.4573, time 402.00ms, mfu 1.09%
+step 2000: train loss 0.5686, val loss 0.5427
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 2000: loss 0.5652, time 4525.79ms, mfu 0.99%
+iter 2200: loss 0.6590, time 402.52ms, mfu 1.01%
+iter 2400: loss 0.6974, time 402.03ms, mfu 1.02%
+iter 2600: loss 0.5561, time 402.34ms, mfu 1.03%
+iter 2800: loss 0.6819, time 401.92ms, mfu 1.05%
+step 3000: train loss 0.4963, val loss 0.5126
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 3000: loss 0.7024, time 4140.33ms, mfu 0.95%
+iter 3200: loss 0.5356, time 401.89ms, mfu 0.97%
+iter 3400: loss 0.4432, time 402.04ms, mfu 0.99%
+iter 3600: loss 0.6568, time 402.44ms, mfu 1.01%
+iter 3800: loss 0.4962, time 402.31ms, mfu 1.02%
+step 4000: train loss 0.4793, val loss 0.4851
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 4000: loss 0.3433, time 4068.42ms, mfu 0.93%
+iter 4200: loss 0.4652, time 401.84ms, mfu 0.95%
+iter 4400: loss 0.4416, time 401.65ms, mfu 0.97%
+iter 4600: loss 0.4496, time 401.91ms, mfu 0.99%
+iter 4800: loss 0.3269, time 401.41ms, mfu 1.01%
+step 5000: train loss 0.4801, val loss 0.4613
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 5000: loss 0.4221, time 4027.43ms, mfu 0.92%
+iter 5200: loss 0.4019, time 401.27ms, mfu 0.94%
+iter 5400: loss 0.2955, time 401.27ms, mfu 0.96%
+iter 5600: loss 0.4099, time 401.14ms, mfu 0.98%
+iter 5800: loss 0.4146, time 400.93ms, mfu 1.00%
+step 6000: train loss 0.4821, val loss 0.4823
+saving checkpoint to /kaggle/working/nanoGPT_runs/out-abc-small
+iter 6000: loss 0.4729, time 3974.07ms, mfu 0.91%
