@@ -184,6 +184,8 @@ Scaling plots are generated for:
 
 ## Step 7: Music Generation
 
+Generated 10 samples for each.
+
 ### Unconditional Generation
 
 Models generate music from scratch. Larger Transformers produce:
